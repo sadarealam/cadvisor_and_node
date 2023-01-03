@@ -5,6 +5,7 @@ services:
     hostname: "{{.Node.Hostname}}"
     container_name: node-exporter
     image: prom/node-exporter
+    restart: always
     ports:
       - "9100:9100"
     volumes:
@@ -28,6 +29,7 @@ services:
     container_name: cadvisor
     hostname: "{{.Node.Hostname}}"
     image: gcr.io/cadvisor/cadvisor:v0.46.0
+    restart: always
     ports:
       - "9080:8080"
     volumes:
